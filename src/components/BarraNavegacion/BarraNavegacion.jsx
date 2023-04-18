@@ -6,8 +6,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import IconButton from "@mui/material/IconButton";
+import {Link, useNavigate} from 'react-router-dom';
 
 const Barranavegacion = () => {
+    const navigate = useNavigate();
+    const goToPeliculas = () => {
+      navigate("/peliculas");
+    }
     return (
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
@@ -24,6 +29,10 @@ const Barranavegacion = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Aplicación peliculas React
             </Typography>
+            <Link to="/peliculas">Peliculas Recientes</Link>
+            <Button variant="outlined" color="secondary" onClick={goToPeliculas}>
+              Pelicuas recientes
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
